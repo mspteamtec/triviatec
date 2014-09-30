@@ -37,7 +37,7 @@ public class Estudiante extends Persona{
 //Método To String
     @Override
     public String toString() {
-        return super.toString() + "Estudiante{" + "carne=" + carne + '}';
+        return super.toString() + "Carne: " + carne;
     }
     
     

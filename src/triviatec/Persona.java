@@ -13,6 +13,7 @@ public class Persona {
     private char[] contraseña;
     private String fechaderegistro;
     private String fotografia;
+ 
 //Constructor por defecto
     public Persona() {
     }
@@ -24,6 +25,7 @@ public class Persona {
         this.contraseña = contraseña;
         this.fechaderegistro = fechaderegistro;
         this.fotografia = fotografia;
+        
     }
     
 //Getters y setters
@@ -74,14 +76,12 @@ public class Persona {
     public void setFotografia(String fotografia) {
         this.fotografia = fotografia;
     }
-    //Método para registrarse
-public void Registrarse(){
-   
-}
+
 //Método To string
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", cedula=" + cedula + ", correoelectronico=" + correoelectronico + ", contrase\u00f1a=" + contraseña + ", fechaderegistro=" + fechaderegistro + ", fotografia=" + fotografia + '}';
+        return "Nombre: " + nombre + "Cédula: " + cedula + "e-Mail: " + correoelectronico 
+                + "Contraseña: " + contraseña + "Fecha de Registro: " + fechaderegistro + "Fotografía: " + fotografia;
     }
     
     
