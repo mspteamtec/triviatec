@@ -6,6 +6,7 @@
 
 package triviatec;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -94,4 +95,22 @@ int l = 0;
         }
     
     }
+     public void iniciarsesion(int cedula, String contrasena){
+         int c = arregloestudiantes.size();
+         for (int i = 0; i < c; i++) {
+            Estudiante estudiante =(Estudiante) arregloestudiantes.get(i); 
+            int ced = estudiante.getCedula();
+           
+            char[] passw= estudiante.getContraseña();    
+            
+            String pass = Arrays.toString(passw);
+            
+            if(cedula == ced && contrasena==pass){
+                System.out.println(pass);
+            }
+            
+         }
+         
+         
+     }
 }

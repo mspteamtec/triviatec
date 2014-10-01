@@ -77,7 +77,7 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="txtnombre" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtcedula" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtcorreo" alignment="0" pref="105" max="32767" attributes="0"/>
+                                      <Component id="txtcorreo" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtcontrasena" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="txtcarne" min="-2" pref="59" max="-2" attributes="0"/>
@@ -160,6 +160,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JPasswordField" name="EntradaContrasena">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EntradaContrasenaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="txtnombre">
               <Properties>

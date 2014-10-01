@@ -59,6 +59,12 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        EntradaContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaContrasenaActionPerformed(evt);
+            }
+        });
+
         txtnombre.setText("Nombre");
 
         txtcedula.setText("Cédula");
@@ -139,7 +145,7 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtnombre)
                                 .addComponent(txtcedula)
-                                .addComponent(txtcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                .addComponent(txtcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtcontrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(txtcarne, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 32, Short.MAX_VALUE)
@@ -302,6 +308,10 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
         nuevatrivia.imprimirestudiante();
         nuevatrivia.imprimirprofesor();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void EntradaContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EntradaContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
