@@ -10,7 +10,7 @@ public class Profesor extends Persona {
     }
 
 //Constructor sobrecargado
-    public Profesor(String nombre, int cedula, String correoelectronico, char[] contraseña, String fechaderegistro, String fotografia) {
+    public Profesor(String nombre, int cedula, String correoelectronico, String contraseña, String fechaderegistro, String fotografia) {
         super(nombre, cedula, correoelectronico, contraseña, fechaderegistro, fotografia);
     }
     //Método para apreobar estudiante

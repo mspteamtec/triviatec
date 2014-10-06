@@ -98,9 +98,10 @@ public class VentanaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEntrarActionPerformed
-      String contrasena= EntradaContraseña.getPassword().toString();
-       int cedula =Integer.parseInt( EntradaCedula.getText());
-        nuevatrivia.iniciarsesion(cedula,contrasena);
+      String contrasena= EntradaContraseña.getText();
+      String cedula = EntradaCedula.getText();
+      System.out.println(contrasena + " " + cedula);
+      nuevatrivia.iniciarsesion(cedula, contrasena);
     }//GEN-LAST:event_BotonEntrarActionPerformed
 
     /**

@@ -5,6 +5,7 @@
  */
 
 package triviatec;
+import Grafica.VEstudiante;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -69,15 +70,15 @@ int l = 0;
         //Método para registrarse
     public void registrarEstudiante(Estudiante e){
         
-        arregloestudiantes.add(n,e);
+        arregloestudiantes.add(e);
         System.out.print(arregloestudiantes.size()+"\n");
-        n++;
+        //n++;
         //System.out.println(arregloestudiantes.get(n).toString());
 }
     public void registrarProfesor(Profesor p){
-        arregloprofesores.add(l,p);
+        arregloprofesores.add(p);
         System.out.print(arregloprofesores.size()+"\n");
-        l++;
+        //l++;
     }
     public void imprimirestudiante(){
         int c=arregloestudiantes.size();
@@ -93,24 +94,28 @@ int l = 0;
         for (int i = 0; i < c; i++) {
            System.out.print(arregloprofesores.get(i).toString()+"\n");
         }
-    
+       
     }
-     public void iniciarsesion(int cedula, String contrasena){
-         int c = arregloestudiantes.size();
-         for (int i = 0; i < c; i++) {
-            Estudiante estudiante =(Estudiante) arregloestudiantes.get(i); 
-            int ced = estudiante.getCedula();
-           
-            char[] passw= estudiante.getContraseña();    
-            
-            String pass = Arrays.toString(passw);
-            
-            if(cedula == ced && contrasena==pass){
-                System.out.println(pass);
-            }
-            
+    public void iniciarsesion(String cedula,String contrasena){
+         int e = arregloestudiantes.size(); 
+         int p = arregloprofesores.size();
+         System.out.println(e + " "+ p);
+         for (int i = 0; i < e; i++) {
+             Estudiante estudiante = (Estudiante) arregloestudiantes.get(i);
+             System.out.println("Entra al for");
+             String pass=estudiante.getContraseña();
+             String ced= Integer.toString(estudiante.getCedula());
+             if (contrasena.equals(pass) && cedula.equals(ced)) {
+                 new VEstudiante().setVisible(true);
+             }
+             else{
+                 System.out.println("Datos Incorrectos");
+             }
+         
+                 
+             }
          }
-         
-         
-     }
+    
 }
+     
+

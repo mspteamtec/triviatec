@@ -9,7 +9,7 @@ public class Estudiante extends Persona{
     public Estudiante() {
     }
 //Contructor sobrecargado
-    public Estudiante(int carne, String nombre, int cedula, String correoelectronico, char[] contraseña, String fechaderegistro, String fotografia) {
+    public Estudiante(int carne, String nombre, int cedula, String correoelectronico, String contraseña, String fechaderegistro, String fotografia) {
         super(nombre, cedula, correoelectronico, contraseña, fechaderegistro, fotografia);
         this.carne = carne;
     }

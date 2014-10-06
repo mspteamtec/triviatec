@@ -10,7 +10,7 @@ public class Persona {
     private String nombre;
     private int cedula;
     private String correoelectronico;
-    private char[] contraseña;
+    private String contraseña;
     private String fechaderegistro;
     private String fotografia;
  
@@ -18,7 +18,7 @@ public class Persona {
     public Persona() {
     }
 //Constructor Sobrecargado
-    public Persona(String nombre, int cedula, String correoelectronico, char[] contraseña, String fechaderegistro, String fotografia) {
+    public Persona(String nombre, int cedula, String correoelectronico, String contraseña, String fechaderegistro, String fotografia) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.correoelectronico = correoelectronico;
@@ -53,11 +53,11 @@ public class Persona {
         this.correoelectronico = correoelectronico;
     }
 
-    public char[] getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(char[] contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 
