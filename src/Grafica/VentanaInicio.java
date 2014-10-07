@@ -5,6 +5,10 @@
  */
 
 package Grafica;
+import static com.sun.javafx.tk.Toolkit.getToolkit;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.JTextField;
 import triviatec.*;
 /**
  *
@@ -32,9 +36,9 @@ public class VentanaInicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        EntradaCedula = new javax.swing.JTextField();
         EntradaContraseña = new javax.swing.JPasswordField();
         BotonEntrar = new javax.swing.JButton();
+        EntradaCedula = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TriviaTEC");
@@ -54,6 +58,17 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
 
+        EntradaCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaCedulaActionPerformed(evt);
+            }
+        });
+        EntradaCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EntradaCedulaKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,37 +76,38 @@ public class VentanaInicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(BotonEntrar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(EntradaCedula)
-                                .addComponent(EntradaContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                            .addComponent(EntradaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EntradaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(BotonEntrar)))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(EntradaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(EntradaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonEntrar)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,10 +116,28 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void BotonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEntrarActionPerformed
       String contrasena= EntradaContraseña.getText();
       String cedula = EntradaCedula.getText();
-      System.out.println(contrasena + " " + cedula);
+      
       nuevatrivia.iniciarsesion(cedula, contrasena);
+      EntradaCedula.setText("");
+      EntradaContraseña.setText("");
+      VentanaInicio ventana = new VentanaInicio();
+      
+      
     }//GEN-LAST:event_BotonEntrarActionPerformed
+    private void EntradaCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EntradaCedulaKeyTyped
+        String ced= String.valueOf(evt.getKeyChar());
+        
+        if (!(ced.matches("[0-9]"))) {
+            evt.consume();
+            
+        }
+    }//GEN-LAST:event_EntradaCedulaKeyTyped
 
+    private void EntradaCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaCedulaActionPerformed
+        
+    }//GEN-LAST:event_EntradaCedulaActionPerformed
+
+ 
     /**
      * @param args the command line arguments
      */
@@ -141,7 +175,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonEntrar;
-    private javax.swing.JTextField EntradaCedula;
+    private javax.swing.JFormattedTextField EntradaCedula;
     private javax.swing.JPasswordField EntradaContraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

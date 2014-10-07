@@ -5,16 +5,18 @@
  */
 
 package Grafica;
-import triviatec.*;
+import java.awt.event.KeyEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import triviatec.*;
 /**
  *
  * @author QRly
  */
 
 public class VentanaRegistrarse extends javax.swing.JFrame {
-
+    
     Trivia nuevatrivia = new Trivia();
     public VentanaRegistrarse() {
         initComponents();
@@ -52,9 +54,8 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
         EntradaCarne = new javax.swing.JTextField();
         BtnRegistrar = new javax.swing.JButton();
         EntradaCorreo = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -88,6 +89,11 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                 EntradaCedulaActionPerformed(evt);
             }
         });
+        EntradaCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                EntradaCedulaKeyTyped(evt);
+            }
+        });
 
         rbEstudiante.setText("Estudiante ");
         rbEstudiante.addActionListener(new java.awt.event.ActionListener() {
@@ -118,19 +124,14 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Imprimir Usuarios<-Pruebas");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButton3.setText("Inciar Sesion");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Tipo de Usuario");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -142,13 +143,14 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbProfesor)
-                            .addComponent(rbEstudiante))
+                            .addComponent(rbEstudiante)
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                                 .addContainerGap())
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,9 +169,8 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                                     .addComponent(EntradaCorreo))
                                 .addGap(20, 20, 20))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnRegistrar)
                         .addContainerGap())))
@@ -178,58 +179,44 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtcorreo)
-                        .addComponent(EntradaCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EntradaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtnombre)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(rbEstudiante)
-                                .addGap(11, 11, 11)
-                                .addComponent(rbProfesor))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(EntradaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtnombre))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(EntradaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcedula))))
-                        .addGap(38, 38, 38)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(EntradaCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcedula))
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(EntradaCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcorreo)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(rbEstudiante)
+                        .addGap(11, 11, 11)
+                        .addComponent(rbProfesor)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EntradaContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcontrasena))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EntradaCarne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcarne))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcarne)
-                    .addComponent(EntradaCarne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnRegistrar)
-                    .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addGap(25, 25, 25))
         );
 
         jTabbedPane1.addTab("Registrar Usuarios", jPanel2);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 292, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Registrar Cursos", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,11 +226,16 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        VentanaInicio inicio = new VentanaInicio();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarActionPerformed
         if(rbEstudiante.isSelected()){
@@ -261,10 +253,10 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
             estudiante.setContraseña(contraseña);
             estudiante.setFechaderegistro("Aun falta usar datepickes");
             estudiante.setFotografia("Aun falta usar filepicker");
-            
-           nuevatrivia.registrarEstudiante(estudiante);
+
+            nuevatrivia.registrarEstudiante(estudiante);
             limpiartextos();
-            
+
         }
         else if(rbProfesor.isSelected()){
             Profesor profesor = new Profesor();
@@ -273,7 +265,6 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
             String correo = EntradaCorreo.getText();
             String contraseña = EntradaContrasena.getText();
 
-          
             profesor.setNombre(nombre);
             profesor.setCedula(cedula);
             profesor.setCorreoelectronico(correo);
@@ -282,20 +273,14 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
             profesor.setFotografia("Aun falta usar filepicker");
             nuevatrivia.registrarProfesor(profesor);
             limpiartextos();
-                    }
+        }
         else{
             JOptionPane.showMessageDialog(rootPane, "Seleccione el tipo de usuario");
-            
+
         }
+        
     }//GEN-LAST:event_BtnRegistrarActionPerformed
-    public void limpiartextos(){
-         EntradaCarne.setText("");
-         EntradaNombre.setText("");
-         EntradaCedula.setText("");
-         EntradaCorreo.setText("");
-        EntradaContrasena.setText("");
-    }
-    
+
     private void EntradaCarneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaCarneActionPerformed
 
     }//GEN-LAST:event_EntradaCarneActionPerformed
@@ -316,20 +301,27 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        nuevatrivia.imprimirestudiante();
-        nuevatrivia.imprimirprofesor();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void EntradaContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EntradaContrasenaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            VentanaInicio inicio = new VentanaInicio();
-            inicio.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
+    private void EntradaCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EntradaCedulaKeyTyped
+       
+        
+    }//GEN-LAST:event_EntradaCedulaKeyTyped
+   
+    
+    
+    
+    
+    public void limpiartextos(){
+         EntradaCarne.setText("");
+         EntradaNombre.setText("");
+         EntradaCedula.setText("");
+         EntradaCorreo.setText("");
+        EntradaContrasena.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -374,11 +366,10 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
     private javax.swing.JTextField EntradaNombre;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton rbEstudiante;

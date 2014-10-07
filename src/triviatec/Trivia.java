@@ -6,10 +6,9 @@
 
 package triviatec;
 import Grafica.VEstudiante;
+import Grafica.VProfesor;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
-
 /**
  *
  * @author QRly
@@ -17,12 +16,8 @@ import java.util.Iterator;
 
 public class Trivia {
     
-private ArrayList arregloestudiantes = new ArrayList();
-private ArrayList arregloprofesores = new ArrayList();
-int n = 0;
-int l = 0;
-    
-    
+public static ArrayList arregloestudiante = new ArrayList();
+public static ArrayList arregloprofesor = new ArrayList();  
     //método para obtener los top 10 estudiantes con mas uso de comodines
     public void topTenEstudiantesConmasUsoComodines(){
             
@@ -70,50 +65,59 @@ int l = 0;
         //Método para registrarse
     public void registrarEstudiante(Estudiante e){
         
-        arregloestudiantes.add(e);
-        System.out.print(arregloestudiantes.size()+"\n");
-        //n++;
-        //System.out.println(arregloestudiantes.get(n).toString());
+    arregloestudiante.add(e);
+    /*System.out.print(arregloestudiantes.size()+"\n");*/
+    //n++;
+    //System.out.println(arregloestudiantes.get(n).toString());
 }
     public void registrarProfesor(Profesor p){
-        arregloprofesores.add(p);
-        System.out.print(arregloprofesores.size()+"\n");
-        //l++;
+        arregloprofesor.add(p);
+        /*System.out.print(arregloprofesores.size()+"\n");*/
+       // l++;
     }
     public void imprimirestudiante(){
-        int c=arregloestudiantes.size();
+        int c=arregloestudiante.size();
         System.out.print("<---------Estudiantes------->"+"\n");
         for (int i = 0; i < c; i++) {
-           System.out.print(arregloestudiantes.get(i).toString()+"\n");
+           System.out.print(arregloestudiante.get(i).toString()+"\n");
         }
     
     }
      public void imprimirprofesor(){
-        int c=arregloprofesores.size();
+        int c=arregloprofesor.size();
         System.out.print("<---------Profesores------->"+"\n");
         for (int i = 0; i < c; i++) {
-           System.out.print(arregloprofesores.get(i).toString()+"\n");
+           System.out.print(arregloprofesor.get(i).toString()+"\n");
         }
        
     }
     public void iniciarsesion(String cedula,String contrasena){
-         int e = arregloestudiantes.size(); 
-         int p = arregloprofesores.size();
-         System.out.println(e + " "+ p);
+         int e = arregloestudiante.size(); 
+         int p = arregloprofesor.size();
+        
          for (int i = 0; i < e; i++) {
-             Estudiante estudiante = (Estudiante) arregloestudiantes.get(i);
-             System.out.println("Entra al for");
+             Estudiante estudiante = (Estudiante) arregloestudiante.get(i);
+            
              String pass=estudiante.getContraseña();
              String ced= Integer.toString(estudiante.getCedula());
              if (contrasena.equals(pass) && cedula.equals(ced)) {
                  new VEstudiante().setVisible(true);
              }
-             else{
-                 System.out.println("Datos Incorrectos");
-             }
+             
          
                  
              }
+         for (int i = 0; i < p; i++) {
+             Profesor profesor = (Profesor) arregloprofesor.get(i);
+             
+             String pass=profesor.getContraseña();
+             String ced= Integer.toString(profesor.getCedula());
+             if (contrasena.equals(pass) && cedula.equals(ced)) {
+                 new VProfesor().setVisible(true);
+             }
+             
+            
+        }
          }
     
 }

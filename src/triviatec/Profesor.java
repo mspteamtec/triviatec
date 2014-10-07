@@ -2,9 +2,11 @@
 
 package triviatec;
 
+import java.util.ArrayList;
+
 
 public class Profesor extends Persona {
-
+  
 //Constructor por defecto
     public Profesor() {
     }
@@ -12,6 +14,7 @@ public class Profesor extends Persona {
 //Constructor sobrecargado
     public Profesor(String nombre, int cedula, String correoelectronico, String contraseña, String fechaderegistro, String fotografia) {
         super(nombre, cedula, correoelectronico, contraseña, fechaderegistro, fotografia);
+       
     }
     //Método para apreobar estudiante
     public void AprebarEstudiante(){
