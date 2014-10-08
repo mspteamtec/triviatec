@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/triviatec/Profesor.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/triviatec/Persona.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/Grafica/VentanaInicio.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/Grafica/VEstudiante.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/Grafica/VentanaRegistrarse.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/triviatec/Trivia.java</file>
-            <file>file:/C:/Users/QRly/Documents/GitHub/triviatec/src/triviatec/Estudiante.java</file>
+            <file>file:/C:/Users/QRly/Desktop/triviatec/triviatec/src/Grafica/VProfesor.java</file>
+            <file>file:/C:/Users/QRly/Desktop/triviatec/triviatec/src/triviatec/TriviaTEC.java</file>
+            <file>file:/C:/Users/QRly/Desktop/triviatec/triviatec/src/Grafica/VentanaRegistrarse.java</file>
+            <file>file:/C:/Users/QRly/Desktop/triviatec/triviatec/src/triviatec/Trivia.java</file>
+            <file>file:/C:/Users/QRly/Desktop/triviatec/triviatec/src/Grafica/MenuEstudiante.java</file>
         </group>
     </open-files>
 </project-private>

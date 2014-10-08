@@ -18,6 +18,23 @@ public class Trivia {
     
 public static ArrayList arregloestudiante = new ArrayList();
 public static ArrayList arregloprofesor = new ArrayList();  
+
+    public Trivia(ArrayList arregloestudiantes, ArrayList arregloprofesores){
+        this.arregloestudiante= arregloestudiantes;
+        this.arregloprofesor=arregloprofesores;
+    }
+   
+    public Trivia() {
+    }
+
+    public static ArrayList getArregloestudiante() {
+        return arregloestudiante;
+    }
+
+    public static ArrayList getArregloprofesor() {
+        return arregloprofesor;
+    }
+
     //método para obtener los top 10 estudiantes con mas uso de comodines
     public void topTenEstudiantesConmasUsoComodines(){
             

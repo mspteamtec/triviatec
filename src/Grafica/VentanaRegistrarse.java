@@ -56,6 +56,7 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
         EntradaCorreo = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -133,6 +134,13 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
 
         jLabel2.setText("Tipo de Usuario");
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -171,6 +179,8 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jButton3)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnRegistrar)
                         .addContainerGap())))
@@ -212,7 +222,8 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnRegistrar)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton2))
                 .addGap(25, 25, 25))
         );
 
@@ -309,6 +320,11 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_EntradaCedulaKeyTyped
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        VProfesor ventanaprofe = new VProfesor();
+        ventanaprofe.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
    
     
     
@@ -366,6 +382,7 @@ public class VentanaRegistrarse extends javax.swing.JFrame {
     private javax.swing.JTextField EntradaNombre;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
